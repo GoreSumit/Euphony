@@ -1,0 +1,91 @@
+
+    
+
+        .welcome{
+            
+            margin: 15px 15px 15px 15px;
+           
+            .greeting{
+                margin-bottom: 15px;
+                
+            }
+            .greetingContent{
+                flex-wrap:wrap;
+                display: grid;
+                // justify-content:space-around;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                column-gap: 20px;
+
+                
+                .content-card{
+                    box-shadow: -5px 5px 5px 2px #C58940;
+                    border-radius: 3px;
+                    margin-bottom: 15px;
+                    width: 300px;
+                    min-width: 200px;
+                    height: 80px;
+                    background-color: #E5BA73;
+                    display: flex;
+                    // margin-right: 15px;
+                    align-items: center;
+                    transition: 0.5s;                   
+
+                    
+                    .card-img{
+                       height: 80px;
+                        width: 80px;
+                        img{
+                            height: 80px;
+                            width: 80px;
+                            border-radius: 3px 0px 0px 3px;
+                        }
+                    }
+                    .card-title{
+                        // border: 1px solid black;
+                        flex-grow: 1; 
+                        text-align: center;
+                    }
+                }
+
+                .content-card:hover{
+                    background-image:linear-gradient(to bottom right, #FAEAB1 ,rgba(219, 120, 255, 1));
+                    // background-color: rgba(219, 120, 255, 1);
+                    // transition: 0.3s;                   
+                }
+            }
+        }
+        .unique{
+            margin: 15px 15px 15px 15px;            
+            .uniqueContent::-webkit-scrollbar {
+                display: none;
+              }
+            .uniqueContent{
+                display:flex;
+                overflow-x:auto;
+                justify-content: flex-start;
+                column-gap: 20px;
+
+                
+
+                .unique-content-card{
+                    height: auto;
+                    width: 120px;
+                    border-radius: 50px;
+                    
+                    img{
+                        height: 120px;
+                        width: 120px;
+                        border-radius: 50px;
+                    }
+                    .unique-card-title{
+                        width: 100%;
+                        text-align: center;
+                        color: black;
+                    }
+                }
+
+            }
+
+        }
+
+        

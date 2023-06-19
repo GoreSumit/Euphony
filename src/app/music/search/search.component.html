@@ -1,0 +1,80 @@
+
+<div class="searchBar">
+
+    <form class="input-group mb-3" #searchForm="ngForm" (submit)="onSubmit()">
+        <input type="text" class="form-control" placeholder="Search..." name="search" [(ngModel)]="searchbar">
+
+        <select class="form-select" id="inputGroupSelect01" (change)="onChange($event)">
+            <option selected>Choose...</option>
+            <option value="album">Album</option>
+            <option value="artist">Artist</option>
+            <option value="track">Track</option>
+        </select> 
+
+        <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><i class="bi bi-search"></i></button>
+        
+    </form>
+</div>
+
+
+<div class="contentDisplay">
+
+    
+    
+
+        <div class="artistView" *ngIf=" templateView ==='artist' ">
+            <h1>ARTIST PAGE</h1>
+            <div class="loader" *ngIf="loading">
+                <div class="lds-dual-ring"></div>
+            </div>
+
+            <ng-container *ngIf="searchData$ | async as searchData">
+                <ng-container *ngIf="!loading">
+                    {{searchData|json}}
+                </ng-container>
+            </ng-container>
+    
+        </div>
+
+        <div class="albumView" *ngIf=" templateView ==='album' ">
+            <h1>ALBUM PAGE</h1>
+            <div class="loader" *ngIf="loading">
+                <div class="lds-dual-ring"></div>
+            </div>
+
+            <ng-container *ngIf="searchData$ | async as searchData">
+                <ng-container *ngIf="!loading">
+                    {{searchData|json}}
+                </ng-container>
+            </ng-container>
+         
+        </div>
+
+        <div class="trackView" *ngIf=" templateView ==='track' ">
+            <h1>TRACK PAGE</h1>
+            <div class="loader" *ngIf="loading">
+                <div class="lds-dual-ring"></div>
+            </div>
+
+            <ng-container *ngIf="searchData$ | async as searchData">
+                <ng-container *ngIf="!loading">
+                    {{searchData|json}}
+                </ng-container>
+            </ng-container>
+        </div>
+
+       
+    
+
+    
+</div>
+
+
+<div>
+    <h1>Profile Info</h1>
+    <div *ngIf="profile$|async as profile">
+        {{profile|json}}
+    </div>
+</div>
+
+

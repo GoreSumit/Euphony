@@ -1,0 +1,139 @@
+
+
+
+<div class="welcome">
+        <div class="greeting">
+            <h2>{{welcomeGreeting}}</h2>
+        </div>
+        <div class="greetingContent" > 
+
+            
+            <div class="content-card" [routerLink]="['/music/liked']">
+                <div class="card-img">
+                    <img src="../../../assets/likedsongs.png" alt="">
+                </div>
+                <div class="card-title">
+                    <h5>Liked Songs</h5>
+                </div>
+            </div>
+
+            
+            <div class="loader" *ngIf="loading">
+                <div class="lds-dual-ring"></div>
+            </div>
+            <ng-container *ngIf="userTopArtists$|async as topArtists">
+                <ng-container *ngIf="!loading">
+                <div class="content-card" *ngFor="let artist of topArtists.items">
+                    <div class="card-img">
+                        <img src={{artist.images[0].url}} alt="">
+                    </div>
+                    <div class="card-title">
+                        <h5>{{artist.name}}</h5>
+                    </div>
+                </div>
+            </ng-container>
+            </ng-container>
+
+            <div class="loader" *ngIf="loading">
+                <div class="lds-dual-ring"></div>
+            </div>
+            <ng-container *ngIf="userTopTracks$|async as topTracks">
+        
+                <ng-container *ngIf="!loading">
+                <div class="content-card" *ngFor="let track of topTracks.items">
+                    
+
+                    <div class="card-img">
+                        <img src={{track.album.images[0].url}} alt="">
+                    </div>
+                    <div class="card-title">
+                        <h5>{{track.name}}</h5>
+                    </div>
+                </div>
+            </ng-container>
+        </ng-container>
+
+
+
+        </div>
+    </div>
+
+
+
+<div class="unique">
+        <div class="uniqueTitle">
+            <h2>Your Playlists</h2>
+        </div>
+
+        <div class="loader" *ngIf="loading">
+            <div class="lds-dual-ring"></div>
+        </div>
+
+        <div class="uniqueContent container" *ngIf="playlists|async as data">
+    
+            <ng-container *ngIf="!loading">
+
+             <div class="unique-content-card" *ngFor="let playlist of data.items" [routerLink]="['/music/playlist',playlist.id]">
+                    <img src={{playlist.images[0].url}} alt="">
+                    <h5 class="unique-card-title">{{playlist.name}}</h5>
+            </div> 
+            <div class="unique-content-card" *ngFor="let playlist of data.items" [routerLink]="['/music/playlist',playlist.id]">
+                <img src={{playlist.images[0].url}} alt="">
+                <h5 class="unique-card-title">{{playlist.name}}</h5>
+        </div>
+            
+            </ng-container>
+        </div>
+    </div>
+    
+    <div *ngIf="userRecommendations$|async as userRec">
+        {{userRec|json}}
+
+    </div>
+
+
+<!-- <div class="unique">
+        <div class="uniqueTitle">
+            <h2>2nd Container</h2>
+        </div>
+        <div class="uniqueContent">
+
+            <div class="unique-content-card">
+                    <img src="" alt="">
+                    <h5 class="unique-card-title">Title</h5>
+            </div>
+            <div class="unique-content-card">
+                    <img src="" alt="">
+                    <h5 class="unique-card-title">Title</h5>
+            </div>
+            <div class="unique-content-card">
+                    <img src="" alt="">
+                    <h5 class="unique-card-title">Title</h5>
+            </div>
+            <div class="unique-content-card">
+                    <img src="" alt="">
+                    <h5 class="unique-card-title">Title</h5>
+            </div>
+
+            
+
+            
+
+
+        </div>
+    </div> -->
+
+    <!-- <div class="row" *ngIf="newRelease$ | async as newRelease"  >
+        <h2 class="text-white">New Releases</h2>
+        <div class="card" style="width: 12rem;" *ngFor="let data of newRelease.albums.items">      
+          <img [src]="data.images[1].url" class="card-img-top" alt="...">
+           <div class="card-body">
+             <strong class="card-text">{{data.name}}</strong>
+             <p class="card-text">Artist : {{data.artists[0].name}}</p>
+             <p class="card-text">Type : {{data.type}} {{data.album_type}}</p>
+           </div>
+         </div>
+        </div> -->
+
+
+     

@@ -1,0 +1,48 @@
+<p>playlist works!</p>
+<div *ngIf="playlistById$|async as playlist">
+    <img src={{playlist.images[0].url}} alt="" width="150px" height="150px">
+    <h1>
+        {{playlist.name}}
+    </h1>
+    <p >
+        
+
+    </p>
+
+
+
+<div class="song-list container-fluid">
+
+    <table class="table" >
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Artist</th>
+            <th scope="col">Album</th>
+            
+
+          </tr>
+        </thead>
+        <tbody *ngFor="let track of playlist.tracks.items">
+          <tr>
+            <th scope="row"></th>
+            <td>{{track|json}}</td>
+            <td></td>
+            <td>
+                
+                
+                
+            </td>
+            
+          </tr>
+
+          
+        </tbody>
+      </table>
+
+
+    
+
+</div>
+</div>

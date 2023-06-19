@@ -1,0 +1,115 @@
+<div class="container-fluid main">
+    <div class="container sideControl">
+        <p>menu</p>
+        <ul>
+            <li>
+                <a [routerLink]="['/music/for-you']" routerLinkActive="active">
+                    <i class="bi bi-fire"></i>
+                    <span>For You</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" routerLinkActive="active">
+                    <i class="bi bi-music-note"></i>
+                    <span>Playlists</span>
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="['/music/search']" routerLinkActive="active">
+                    <i class="bi bi-search"></i>
+                    <span>search</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bi bi-person-fill"></i>
+                    <span>artist</span>
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="['/music/login']" routerLinkActive="active">
+                    <i class="bi bi-person-fill"></i>
+                    <span>login</span>
+                </a>
+            </li>
+
+        </ul>
+        
+        <div class="spotifyPlayer container-fluid">
+            <p class="currentlyPlaying">Currently Playing</p>
+            <small class="text-white">
+                <marquee behavior="sliding" direction="left">device name</marquee>
+            </small>
+            <!-- <div class="playback">
+
+
+
+                <img src={{image}} alt="">
+                <div class="artistInfo">
+
+                    <progress [value]="progressValue()" max="100"></progress>
+
+
+                    <h5>
+                        {{trackName}}
+                    </h5>
+                    <small>
+                        {{artistName}}
+
+                    </small>
+                </div>
+
+                <div class="playbackButtons">
+                    <i class="bi bi-chevron-double-left"></i>
+                    <ng-container *ngIf="!isPlaying">
+                        <i class="bi bi-play-fill"></i>
+                    </ng-container>
+                    <ng-container *ngIf="isPlaying">
+                        <i class="bi bi-pause-fill" (click)="onPause()"></i>
+                    </ng-container>
+                    <i class="bi bi-chevron-double-right"></i>
+                </div>
+
+
+            </div> -->
+
+
+            <!-- <div class="playback" >
+               
+                    
+                <img src={{playback.item.album.images[0].url}} alt="">
+                <div class="artistInfo">
+
+                    <progress [value]="progressValue(playback.progress_ms,playback.item.duration_ms)" max="100"></progress>
+                    <progress [value]="progressValue()" max="100"></progress>
+
+
+                    <h5>
+                        {{playback.item.name}}
+                    </h5>
+                    <small>
+                        
+                        {{playback.item.album.artists[0].name}}
+                    </small>
+                </div>
+                <div class="playbackButtons">
+                    <i class="bi bi-chevron-double-left"></i>
+                    <i class="bi bi-play-fill"></i>
+                    <i class="bi bi-pause-fill"></i>
+                    <i class="bi bi-chevron-double-right"></i>
+                </div>
+                
+
+            </div> -->
+
+
+
+        </div>
+        
+
+
+    </div>
+    <div class="inner container-fluid">
+        <router-outlet></router-outlet>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+.likedSongs{
+    border-radius: 20px 20px 0px 0px;
+    display: flex;
+    padding: 20px;
+    background-image:linear-gradient(to bottom right, #FAEAB1 20%,#1a0758); 
+    h1{
+        margin-left: 10px;
+        align-self: flex-end;
+    }
+    img{
+        border-radius: 20px;
+    }
+}
+
+.album-images{
+    width: 30px;
+    height: 30px;
+}
+
+.song-list{
+    background-image:linear-gradient(to bottom right,#3e3a49,#FAEAB1); 
+
+}

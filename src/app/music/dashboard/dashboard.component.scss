@@ -1,0 +1,161 @@
+.main{
+    height: 100%;
+    border-radius: 20px;
+    background-color: #303134;
+    padding: 5px 5px 5px 0px;
+    display: flex;
+    font-family: "Aileron";
+    .sideControl{
+        text-transform: capitalize;
+        max-width: 150px;
+        margin: 0;
+        align-content: center;
+        flex-shrink: 0;
+        // border: 1px solid yellow;
+        padding: 0;
+        
+
+       
+        p{
+            width: 100%;
+            color: gray;
+            // border:1px solid green;
+            text-align: center;
+
+        }
+
+        ul{
+            padding: 0px;
+            margin-left: 10px;
+            margin-right: 2px;
+            
+            // border: 1px solid green;
+            li a:active{
+                border-left:5px groove rgba(219, 120, 255, 1);
+                color: rgba(219, 120, 255, 1);
+            }
+            li .active{
+                    
+                color: rgba(219, 120, 255, 1);
+            }
+            li{
+                // border: 1px solid ;
+                list-style: none;
+                margin-bottom:20px ;
+                
+
+
+                a{
+                    border-left: rgba(219, 120, 255, 1);
+                    margin-left: 8px;
+                    text-decoration: none;
+                    color: #E5BA73;
+                    // border: 1px solid blue;
+                    
+
+                    i{
+                        font-size: 20px;
+                    }
+                    span{
+                        margin-left: 20px;
+                        // border: 1px solid blue;
+                        font-size: 20px;
+                    }
+                }
+                
+            }
+        } 
+       
+    }
+    .inner{
+        // background-color:#E5BA73;
+        background-image:linear-gradient(to bottom right, #FAEAB1 20%,#E5BA73); 
+        height: 100%;
+        border-radius: 20px;
+        flex-grow: 1;
+        margin: 0;
+        overflow: auto;
+        scrollbar-width: none; //works in mozilla firefox
+        padding: 15px 15px 15px 15px;
+        
+    }
+    .inner::-webkit-scrollbar {
+        display: none; //for edge and chrome
+    }
+
+    .spotifyPlayer{
+        // border: 1px solid green;
+        .currentlyPlaying{
+            margin-bottom: 0;
+
+        }
+        .playback{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            
+            img{
+            padding: 5px;
+            border-radius: 80px;
+            width: 100%;
+            height: auto;
+                }
+          
+            .artistInfo{
+
+
+                color: rgba(219, 120, 255, 1);
+
+                progress{
+                    // background-color: black;
+                    background: #E5BA73;
+                    width:90%;
+                    border-radius: 50px;
+                }
+                /* For Firefox */
+                // progress::-moz-progress-bar {
+                //     border-radius: 10px 10px 10px 10px;
+                //     background: black;
+                // }
+               
+        
+                /* For Chrome or Safari */
+                progress::-webkit-progress-value {
+                    background:#E5BA73;
+                    border-radius: 10px 10px 10px 10px;
+
+
+                }
+                /* For Chrome or Safari */
+                progress::-webkit-progress-bar {
+                    // background-color:black;
+                    border-radius: 10px 10px 10px 10px;
+
+                }
+        
+        
+               
+              
+        
+        
+           
+               
+        
+                
+
+
+
+
+            }
+            .playbackButtons{
+                color: white;
+                font-size: 20px;
+                .bi{
+
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+}

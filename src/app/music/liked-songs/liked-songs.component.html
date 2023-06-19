@@ -1,0 +1,40 @@
+<div class="container-fluid likedSongs">
+    <img src="../../../assets/likedsongs.png" alt="">
+    <h1>Liked Songs</h1>
+</div>
+
+
+<div class="song-list container-fluid" *ngIf="likedSongs$|async as likedSongs">
+
+    <table class="table" >
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Artist</th>
+            <th scope="col">Album</th>
+            
+
+          </tr>
+        </thead>
+        <tbody *ngFor="let tracks of likedSongs.items">
+          <tr>
+            <th scope="row"></th>
+            <td>{{tracks.track.name}}</td>
+            <td>{{tracks.track.artists[0].name}}</td>
+            <td>
+                <img class="album-images" src={{tracks.track.album.images[0].url}} alt="">
+                
+                {{tracks.track.album.name}}
+            </td>
+            
+          </tr>
+
+          
+        </tbody>
+      </table>
+
+
+    
+
+</div>
